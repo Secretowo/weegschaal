@@ -38,7 +38,7 @@ MEASUREMENTS = cv.Schema({
 
     });
 
-for x in [1,2,3,4,5,6,7,255]:
+for x in range(1,9):
     MEASUREMENTS = MEASUREMENTS.extend(
        cv.Schema(
         {
@@ -117,7 +117,7 @@ async def to_code(config):
         cg.add(var.set_time_id(time_))
     cg.add(var.use_timeoffset(config[CONF_TIME_OFFSET]))
 
-    for x in range(1, 8):
+    for x in range(1, 9):
         CONF_VAL = "%s_%s" %(CONF_WEIGHT,x)
         if CONF_VAL in config:
             sens = await sensor.new_sensor(config[CONF_VAL])
