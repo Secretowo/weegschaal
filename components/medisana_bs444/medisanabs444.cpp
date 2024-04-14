@@ -123,7 +123,7 @@ namespace medisana_bs444
         ESP_LOGI(TAG, "Person %s:", mPerson.toString().c_str());
         if ((mPerson.person >= 1) && (mPerson.person <= 8))
         {
-          uint8_t index = mPerson.person - 1;
+          uint8_t index = 0//mPerson.person - 1;
 
           if (mWeight.valid && (mWeight.person == mPerson.person))
           {
