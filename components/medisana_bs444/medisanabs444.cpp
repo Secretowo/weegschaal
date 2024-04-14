@@ -52,7 +52,7 @@ namespace medisana_bs444
   {
     ESP_LOGCONFIG(TAG, "MedisanaBS444:");
     ESP_LOGCONFIG(TAG, "  MAC address        : %s", this->parent()->address_str().c_str());
-    for (uint8_t i = 0; i < 8; i++)
+    for (uint8_t i = 0; i < 9; i++)
     {
       //if (i==8) {i=255;}
       ESP_LOGCONFIG(TAG, "User_%d:", i);
@@ -125,8 +125,11 @@ namespace medisana_bs444
         ESP_LOGI(TAG, "Person %s:", mPerson.toString().c_str());
         if (((mPerson.person >= 1) && (mPerson.person <= 8)) || mPerson.person == 255)
         {
+          if(mPerson.person == 255){
+            uint8_t index = 8;
+          } else {
           uint8_t index = mPerson.person - 1;
-
+          }
           if (mWeight.valid && (mWeight.person == mPerson.person))
           {
             ESP_LOGI(TAG, "Weight %s:", mWeight.toString(mPerson).c_str());
