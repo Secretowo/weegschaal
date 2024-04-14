@@ -122,7 +122,7 @@ namespace medisana_bs444
       {
         // this is a measurement
         ESP_LOGI(TAG, "Person %s:", mPerson.toString().c_str());
-        if (((mPerson.person >= 1) && (mPerson.person <= 8)) || mPerson.person == 256)
+        if (((mPerson.person >= 1) && (mPerson.person <= 8)) || mPerson.person == 255)
         {
           uint8_t index = mPerson.person - 1;
 
