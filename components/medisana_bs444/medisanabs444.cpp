@@ -125,7 +125,7 @@ namespace medisana_bs444
         {
           uint8_t index = 0;//mPerson.person - 1;
 
-          if (mWeight.valid && (mWeight.person == mPerson.person))
+          if (mWeight.valid)
           {
             ESP_LOGI(TAG, "Weight %s:", mWeight.toString(mPerson).c_str());
             if (this->weight_sensor_[index])
@@ -133,7 +133,7 @@ namespace medisana_bs444
             if (this->bmi_sensor_[index] && mPerson.size)
               this->bmi_sensor_[index]->publish_state(mWeight.weight / (mPerson.size * mPerson.size));
           }
-          if (mBody.valid && (mBody.person == mPerson.person))
+          if (mBody.valid)
           {
             ESP_LOGI(TAG, "Body %s:", mBody.toString().c_str());
             if (this->kcal_sensor_[index])
