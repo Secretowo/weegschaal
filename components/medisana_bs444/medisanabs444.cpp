@@ -52,8 +52,9 @@ namespace medisana_bs444
   {
     ESP_LOGCONFIG(TAG, "MedisanaBS444:");
     ESP_LOGCONFIG(TAG, "  MAC address        : %s", this->parent()->address_str().c_str());
-    for (uint8_t i = 0; i < 8; i++)
+    for (uint8_t i = 0; i < 9; i++)
     {
+      if (i==8) {i=256}
       ESP_LOGCONFIG(TAG, "User_%d:", i);
       if (this->weight_sensor_[i])
         LOG_SENSOR(TAG, " weight", this->weight_sensor_[i]);
@@ -121,7 +122,7 @@ namespace medisana_bs444
       {
         // this is a measurement
         ESP_LOGI(TAG, "Person %s:", mPerson.toString().c_str());
-        if ((mPerson.person >= 1) && (mPerson.person <= 8))
+        if (((mPerson.person >= 1) && (mPerson.person <= 8)) || mPerson.person == 256)
         {
           uint8_t index = mPerson.person - 1;
 
