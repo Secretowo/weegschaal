@@ -70,6 +70,7 @@ namespace medisana_bs444
         LOG_SENSOR(TAG, " muscle", this->muscle_sensor_[i]);
       if (this->bone_sensor_[i])
         LOG_SENSOR(TAG, " bone", this->bone_sensor_[i]);
+      if(i==255){break;}
     }
   }
 
