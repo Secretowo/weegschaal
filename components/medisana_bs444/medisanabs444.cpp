@@ -54,7 +54,7 @@ namespace medisana_bs444
     ESP_LOGCONFIG(TAG, "  MAC address        : %s", this->parent()->address_str().c_str());
     for (uint8_t i = 0; i < 9; i++)
     {
-      if (i==8) {i=255};
+      if (i==8) {i=255;}
       ESP_LOGCONFIG(TAG, "User_%d:", i);
       if (this->weight_sensor_[i])
         LOG_SENSOR(TAG, " weight", this->weight_sensor_[i]);
