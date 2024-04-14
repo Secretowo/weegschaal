@@ -96,13 +96,13 @@ namespace medisana_bs444
 
     u_int32_t registered_notifications_ = 0;
   protected:
-    sensor::Sensor *weight_sensor_[9]{nullptr};
-    sensor::Sensor *bmi_sensor_[9]{nullptr};
-    sensor::Sensor *kcal_sensor_[9]{nullptr};
-    sensor::Sensor *fat_sensor_[9]{nullptr};
-    sensor::Sensor *tbw_sensor_[9]{nullptr};
-    sensor::Sensor *muscle_sensor_[9]{nullptr};
-    sensor::Sensor *bone_sensor_[9]{nullptr};
+    sensor::Sensor *weight_sensor_[10]{nullptr};
+    sensor::Sensor *bmi_sensor_[10]{nullptr};
+    sensor::Sensor *kcal_sensor_[10]{nullptr};
+    sensor::Sensor *fat_sensor_[10]{nullptr};
+    sensor::Sensor *tbw_sensor_[10]{nullptr};
+    sensor::Sensor *muscle_sensor_[10]{nullptr};
+    sensor::Sensor *bone_sensor_[10]{nullptr};
   };
 } // namespace medisana_bs444
 } // namespace esphome
